@@ -36,17 +36,17 @@ Usage - running depclipse for the first time
 
 You can run *depclipse* by right-clicking on your source folder from the Package Explorer.
 
-![How to run depclise](https://github.com/Kelloggs/depclipse/blob/master/readme_images/run_depclipse.png)
+![How to run depclise](https://github.com/Kelloggs/depclipse/raw/master/readme_images/run_depclipse.png)
 
 If the root folder of your project does not already contain a file with your project's dependency rules, a new file is created. By default, this file is called `DependencyRules.jdr`. You can change this file name in the preferences of *depclipse* (Preferences -> Java -> depclipse).
 
-*depclipse* automatically opens its perspective, to show you the results. If you are already used to JDepend4Eclipse, this view will be familiar to you. If you are interested in the metrics shown, you are welcome to visits the websites of [http://andrei.gmxhome.de/jdepend4eclipse/ JDepend4Eclipse]  and [http://www.clarkware.com/software/JDepend.html JDepend]. On the right side of this view, you can see the prohibited dependencies that were found. Using the Packages Explorer, you can select Packages of Classes in order to see which prohibited dependencies they are causing. 
+*depclipse* automatically opens its perspective, to show you the results. If you are already used to JDepend4Eclipse, this view will be familiar to you. If you are interested in the metrics shown, you are welcome to visits the websites of [JDepend4Eclipse](http://andrei.gmxhome.de/jdepend4eclipse/)  and [JDepend](http://www.clarkware.com/software/JDepend.html). On the right side of this view, you can see the prohibited dependencies that were found. Using the Packages Explorer, you can select Packages of Classes in order to see which prohibited dependencies they are causing. 
 
-![Check prohibited dependencies](https://github.com/Kelloggs/depclipse/blob/master/readme_images/pro_dep.png)
+![Check prohibited dependencies](https://github.com/Kelloggs/depclipse/raw/master/readme_images/pro_dep.png)
 
 At this moment, you haven't yet allowed any of the dependencies within your project, which means that all of them will be shown to you as prohibited. You can edit your project rules using the *depclipse* Rule Editor. You can open the editor by opening your jdr file or by clicking the paragraph icon in the Prohibited Dependencies view.
 
-![depclipse dependency editor](https://github.com/Kelloggs/depclipse/blob/master/readme_images/rule_editor.png)
+![depclipse dependency editor](https://github.com/Kelloggs/depclipse/raw/master/readme_images/rule_editor.png)
 
 On the left side of the editor, you can see the prohibited dependencies which were found during the last run of *depclipse*. You can allow these dependencies by just double-clicking on them. You can also mark multiple dependencies and allow all of them by clicking the "Allow" button on the bottom of the editor. Of course it is also possible to prohibit formerly allowed dependencies.
 
