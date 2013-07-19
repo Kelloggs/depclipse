@@ -2,7 +2,7 @@
 <feature
       id="depclipse"
       label="depclipse"
-      version="0.9.2.qualifier"
+      version="0.9.3.qualifier"
       provider-name="Jens Cornelis"
       plugin="de.plugins.eclipse.depclipse"
       image="depclipse.gif">
@@ -78,7 +78,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    </license>
 
    <url>
-      <update label="depclipse Update Site" url="http://depclipse.jenscornelis.de/update"/>
+      <update label="depclipse Update Site" url="http://kelloggs.github.io/depclipse/update"/>
    </url>
 
    <requires>
