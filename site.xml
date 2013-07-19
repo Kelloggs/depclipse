@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/depclipse_0.9.3.201307191514.jar" id="depclipse" version="0.9.3.201307191514"/>
+   <description name="depclipse Update Site" url="http://kelloggs.github.io/depclipse/">
+      
+   </description>
+   <feature url="features/depclipse_0.9.3.201307191610.jar" id="depclipse" version="0.9.3.201307191610">
+      <category name="Eclipse Kepler 4.3"/>
+   </feature>
+   <category-def name="Eclipse Kepler 4.3" label="Eclipse Kepler 4.3"/>
 </site>
