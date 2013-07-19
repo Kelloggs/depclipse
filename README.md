@@ -16,7 +16,7 @@ The easiest way to install *depclipse* is to use the Eclipse Update Manager (ava
 
 _Go to Help-> Install new Software_
 
-Add the Update Site: http://depclipse.jenscornelis.de/update .
+Add the Update Site: http://kelloggs.github.io/depclipse/ .
 
 
 Kudos
