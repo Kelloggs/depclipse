@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Depclipse by Kelloggs</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Depclipse</h1>
+        <h2>Dependency checker for eclipse</h2>
+        <a href="https://github.com/Kelloggs/depclipse" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="depclipse" class="anchor" href="#depclipse"><span class="octicon octicon-link"></span></a>depclipse</h1>
+
+<h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p><em>depclipse</em> is a dependency checker plugin for Eclipse developed by Jens Cornelis. It evolved as a branch of <a href="http://andrei.gmxhome.de/jdepend4eclipse/">JDepend4Eclipse</a> by Andrei Loskutov. The focus of this branch lies on the definition of project rules for dependencies allowed between the java packages and the automated check for dependencies not explicitly allowed.</p>
+
+<p><em>depclipse</em> is a wrapper for running <a href="http://www.clarkware.com/software/JDepend.html">JDepend</a> from within Eclipse and checking the projects dependencies in order to create rules for which of these correspond to the expected architecture of the project.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The easiest way to install <em>depclipse</em> is to use the Eclipse Update Manager (available since Eclipse 3.5 Galileo):</p>
+
+<p><em>Go to Help-&gt; Install new Software</em></p>
+
+<p>Add the Update Site: <a href="http://depclipse.jenscornelis.de/update">http://depclipse.jenscornelis.de/update</a> .</p>
+
+<h2>
+<a name="kudos" class="anchor" href="#kudos"><span class="octicon octicon-link"></span></a>Kudos</h2>
+
+<p>As mentioned, <em>depclipse</em> is a branch of <a href="http://andrei.gmxhome.de/jdepend4eclipse/">JDepend4Eclipse</a> by Andrei Loskutov. It was developed as a Bachelor's Thesis at the University of Applied Sciences in Offenburg, and since its focus is different from the original implementation, we decided to branch the projects. </p>
+
+<p>The Core of both <em>depclipse</em> and <a href="http://andrei.gmxhome.de/jdepend4eclipse/">JDepend4Eclipse</a> is <a href="http://www.clarkware.com/software/JDepend.html">JDepend</a> from <a href="http://www.clarkware.com%20Clarkware">Clarkware</a>. Please visit their website to obtain information about JDepend.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p><em>depclipse</em> requires Eclipse 3.5 or higher.</p>
+
+<h2>
+<a name="usage---running-depclipse-for-the-first-time" class="anchor" href="#usage---running-depclipse-for-the-first-time"><span class="octicon octicon-link"></span></a>Usage - running depclipse for the first time</h2>
+
+<p>You can run <em>depclipse</em> by right-clicking on your source folder from the Package Explorer.</p>
+
+<p><img src="https://github.com/Kelloggs/depclipse/raw/master/readme_images/run_depclipse.png" alt="How to run depclise"></p>
+
+<p>If the root folder of your project does not already contain a file with your project's dependency rules, a new file is created. By default, this file is called <code>DependencyRules.jdr</code>. You can change this file name in the preferences of <em>depclipse</em> (Preferences -&gt; Java -&gt; depclipse).</p>
+
+<p><em>depclipse</em> automatically opens its perspective, to show you the results. If you are already used to JDepend4Eclipse, this view will be familiar to you. If you are interested in the metrics shown, you are welcome to visits the websites of <a href="http://andrei.gmxhome.de/jdepend4eclipse/">JDepend4Eclipse</a>  and <a href="http://www.clarkware.com/software/JDepend.html">JDepend</a>. On the right side of this view, you can see the prohibited dependencies that were found. Using the Packages Explorer, you can select Packages of Classes in order to see which prohibited dependencies they are causing. </p>
+
+<p><img src="https://github.com/Kelloggs/depclipse/raw/master/readme_images/pro_dep.png" alt="Check prohibited dependencies"></p>
+
+<p>At this moment, you haven't yet allowed any of the dependencies within your project, which means that all of them will be shown to you as prohibited. You can edit your project rules using the <em>depclipse</em> Rule Editor. You can open the editor by opening your jdr file or by clicking the paragraph icon in the Prohibited Dependencies view.</p>
+
+<p><img src="https://github.com/Kelloggs/depclipse/raw/master/readme_images/rule_editor.png" alt="depclipse dependency editor"></p>
+
+<p>On the left side of the editor, you can see the prohibited dependencies which were found during the last run of <em>depclipse</em>. You can allow these dependencies by just double-clicking on them. You can also mark multiple dependencies and allow all of them by clicking the "Allow" button on the bottom of the editor. Of course it is also possible to prohibit formerly allowed dependencies.</p>
+
+<p>If your project evolves, your dependencies might change and there might exist rules for dependencies, which do not occur within your project anymore. They are marked as "Obsolete". You can remove all of them by clicking the "Remove obsolete Dependencies" button.</p>
+
+<p>Remember, that you can use the <em>depclipse</em> preferences to specify filters. This comes in handy, if you do not want to check dependencies against java core classes, like <em>java.</em>*.</p>
+
+<h2>
+<a name="further-reading" class="anchor" href="#further-reading"><span class="octicon octicon-link"></span></a>Further reading</h2>
+
+<p>The usage of depclipse has been discussed in the publication</p>
+
+<p><em>Cornelis J, Dorer K (2010) Vermeidung der Abhängigkeitsdivergenz zwischen Design und Implementierung in Java, (2010)</em></p>
+
+<p>which had been accepted for the <a href="http://www.step2010.de/">STEP2010</a> conference in Furtwangen. </p>
+
+<p>For further information about the metrics used, we suggest to visit the <a href="http://www.clarkware.com/software/JDepend.html">JDepend</a> website.  </p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Kelloggs/depclipse/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Kelloggs/depclipse/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Kelloggs/depclipse"></a> is maintained by <a href="https://github.com/Kelloggs">Kelloggs</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
